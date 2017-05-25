@@ -24,7 +24,7 @@
 
 1. resource owner（资源拥有者）
 
-一个可以授权资源的实体。如果是一个个人是，通常是指最终用户。比如微信用户。
+一个可以授权资源的实体。如果是一个个人时，通常是指最终用户。比如微信用户。
 
 2. resource server（资源服务器）
 
@@ -35,6 +35,7 @@
 请求资源的应用。不限于应用的形式，可以是服务器，桌面应用，手机应用等。比如微信公众号开发者的服务器。
 
 4. authorization server（身份鉴权服务器）
+
 发出访问token给client的服务器。当resource owner允许了client的授权请求后，authorization server就会生成一个token给client。
 
 微信的登录服务器
@@ -113,11 +114,13 @@
 3. 其它服务器要求的信息（比如密钥）
 
 客户类型：
+
 1. confidential
 
   客户有自信维护好这些授权信息。比如它的服务器的访问是有很好的权限限制的。
 
 2. public
+
   客户并没自信维护好这些授权信息。比如客户在某个原生应用或者浏览器应用上。
 
 
@@ -128,6 +131,7 @@ Client Identifier是一个唯一的字符串，用于在authorization server（�
 长度没有限定，但是authorization server（身份鉴权服务器）应该说明这个ID的长度。
 
 对应于微信里的appId.
+
 
 ### 客户鉴权
 
@@ -173,13 +177,12 @@ Client Identifier是一个唯一的字符串，用于在authorization server（�
 1. 身份代码（Authorization Code）
 2. 隐性授权（Implicit）
 3. 密码授权（resource owner password）
-   credentials
 4. 客户信任（client credentials）
 
 同时也允许自定义授权类型。
 
 
-#### Authorization Code
+#### 身份代码（Authorization Code）
 
 图示：
 
@@ -676,6 +679,7 @@ grant_type是一个绝对的URI地址。
 ### Access Token
 
 1. 对client不透明
+
 2. 代表一些scope以及一段可访问时间
 
 #### 生成一个Token
